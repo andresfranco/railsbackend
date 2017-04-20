@@ -5,7 +5,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :user_roles
 
-  def check_roles(roles)
-
-  end
 end
