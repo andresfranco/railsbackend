@@ -42,6 +42,13 @@ group :development, :test do
   gem "awesome_print", require:"ap"
   gem "better_errors"
   gem 'meta_request'
+  gem 'capybara'
+  gem 'pickle'
+  gem 'cucumber-rails',:require => false
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'webrat'
 end
 
 group :development do

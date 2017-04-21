@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails railsbackend: development" uuid="d51745b6-001e-47bc-bf28-034ceb313a35">
+      <database-info product="PostgreSQL" version="9.5.6" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <user-name>postgres</user-name>
+      <introspection-schemas>testgems_dev:public</introspection-schemas>
+    </data-source>
+    <data-source name="Rails railsbackend: test" uuid="1d1e4adc-f902-4565-9ef8-0e004aa57a18">
+      <database-info product="PostgreSQL" version="9.5.6" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <user-name>postgres</user-name>
+      <introspection-schemas>testgems_test:public</introspection-schemas>
+    </data-source>
+    <data-source name="Rails railsbackend: production" uuid="c56e26af-fe23-47bc-ad07-f52c60027f02">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <user-name>postgres</user-name>
+    </data-source>
+    <data-source name="Rails railsbackend: cucumber" uuid="d1468c51-a224-479d-ba43-1b98d0b12521">
+      <database-info product="PostgreSQL" version="9.5.6" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <user-name>postgres</user-name>
+      <introspection-schemas>testgems_test:public</introspection-schemas>
+    </data-source>
+  </component>
+</project>
