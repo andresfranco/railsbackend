@@ -43,7 +43,6 @@ group :development, :test do
   gem "better_errors"
   gem 'meta_request'
   gem 'capybara'
-  gem 'pickle'
   gem 'cucumber-rails',:require => false
   gem 'rspec'
   gem 'rspec-rails'
@@ -61,3 +60,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pg'
 gem 'devise'
 gem 'pundit'
+gem 'json'

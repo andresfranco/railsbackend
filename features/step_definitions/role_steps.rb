@@ -1,6 +1,6 @@
 Given(/^I have roles named (.+)$/) do |names|
   names.split(',').each do |name|
-    Role.create!(:name => name) unless Role.find_by_name(name).id
+    Role.create!(:name => name) unless Role.exists?(:name => name)
   end
 end
 
