@@ -47,6 +47,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'webrat'
   gem "factory_girl_rails"
+  gem 'rails-controller-testing'
 end
 
 group :test do
@@ -55,6 +56,7 @@ group :test do
   gem "database_cleaner"
   gem "launchy"
   gem "selenium-webdriver"
+  gem 'rspec-json_expectations'
 end
 
 group :development do
@@ -67,3 +69,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pg'
 gem 'devise'
 gem 'pundit'
+gem 'json'
