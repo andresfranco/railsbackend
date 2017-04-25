@@ -4,19 +4,21 @@ RSpec.describe "articles/index", type: :view do
   before(:each) do
     assign(:articles, [
       Article.create!(
-        :title => "Title",
-        :body => "Body"
+        :title => "Title1",
+        :body => "Body1"
       ),
       Article.create!(
-        :title => "Title",
-        :body => "Body"
+        :title => "Title2",
+        :body => "Body2"
       )
     ])
   end
 
   it "renders a list of articles" do
     render
-    assert_select "tr>td", :text => "Title".to_s, :count => 2
-    assert_select "tr>td", :text => "Body".to_s, :count => 2
+    assert_select "tr>td", :text => "Title1".to_s, :count => 1
+    assert_select "tr>td", :text => "Body1".to_s, :count => 1
+    assert_select "tr>td", :text => "Title2".to_s, :count => 1
+    assert_select "tr>td", :text => "Body2".to_s, :count => 1
   end
 end

@@ -21,12 +21,12 @@ require 'rails_helper'
 RSpec.describe ArticlesController, type: :controller do
 
   let!(:first_article)  { Article.create(:title => "Test Title", :body => "Test Body")}
-
+  let!(:all_articles) {Article.all}
     describe "GET 'index'" do
       before { get :index }
 
       it "assigns @articles" do
-        expect(assigns(:articles)).to eq([first_article])
+        expect(assigns(:articles)).to eq(all_articles)
       end
 
       it "renders the index template" do
@@ -35,7 +35,7 @@ RSpec.describe ArticlesController, type: :controller do
     end
 
     describe "GET 'show'" do
-   before { get :show , :id => first_article.id }
+   before { get :show ,params:{id: first_article.id} }
 
    it "assigns @article" do
      expect(assigns(:article)).to eq(first_article)
@@ -60,7 +60,7 @@ RSpec.describe ArticlesController, type: :controller do
 
    describe "POST 'create'" do
        context "when valid" do
-         before { post :create, :article => {:title => "Test Title", :body => "Test Body"} }
+         before { post :create, params:{:article => {:title => "Test Title", :body => "Test Body"}} }
 
          it "will redirect to articles path" do
            expect(response).to redirect_to(articles_path)
@@ -71,7 +71,7 @@ RSpec.describe ArticlesController, type: :controller do
          end
        end
        context "when invalid" do
-      before { post :create, :article => {:title => "Test Title", :body => ""} }
+      before { post :create, params:{:article => {:title => "Test Title", :body => ""}}}
 
       it "will render new template" do
         expect(response).to render_template("new")
@@ -84,7 +84,7 @@ RSpec.describe ArticlesController, type: :controller do
   end
 
   describe "GET 'edit'" do
-    before { get :edit, :id => first_article.id }
+    before { get :edit, params:{:id => first_article.id} }
 
     it "assigns @post" do
       expect(assigns(:article)).to eq(first_article)
@@ -97,7 +97,7 @@ RSpec.describe ArticlesController, type: :controller do
 
   describe "PUT 'update'" do
       context "when success" do
-        before { put :update, :article => {:title => "Update Title", :body => "Update Body"},:id => first_article.id }
+        before { put :update, params:{:article => {:title => "Update Title", :body => "Update Body"},:id => first_article.id }}
 
         it "will redirect to root path" do
           expect(response).to redirect_to article_path
@@ -109,7 +109,7 @@ RSpec.describe ArticlesController, type: :controller do
       end
 
       context "when not success" do
-        before { put :update, :article => {:title => "", :body => ""},:id => first_article.id }
+        before { put :update, params:{:article => {:title => "", :body => ""},:id => first_article.id }}
 
         it "will render new template" do
           expect(response).to render_template("edit")
@@ -122,7 +122,7 @@ RSpec.describe ArticlesController, type: :controller do
     end
 
     describe "DELETE 'destroy'" do
-      before { delete :destroy, :article =>{:id => first_article.id} ,:id => first_article.id}
+      before { delete :destroy, params:{:article =>{:id => first_article.id} ,:id => first_article.id}}
 
       it " will redirect to articles path" do
         expect(response).to redirect_to articles_path

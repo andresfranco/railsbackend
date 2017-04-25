@@ -11,5 +11,15 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe ArticlesHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "should work method" do
+    article = Article.create(:title => "Test Title", :body => "Test Body")
+    expect(article_title(article)).to eq("Titulo: "+article.title)
+
+   end
+
+   it "should show deffect title" do
+     article = Article.create(:title => nil, :body => "Test Body")
+     expect(article_title(article)).to eq("Titulo por defecto")
+
+    end
 end
