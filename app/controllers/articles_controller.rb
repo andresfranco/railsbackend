@@ -31,6 +31,7 @@ class ArticlesController < ApplicationController
         format.html { redirect_to articles_path, notice: 'Article has been created' }
         format.json { render :show, status: :created, location: @article }
       else
+        flash[:error] = "Article creation failed."
         format.html { render :new }
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
@@ -45,6 +46,7 @@ class ArticlesController < ApplicationController
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
       else
+        flash[:error] = "Article update failed."
         format.html { render :edit }
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
@@ -56,7 +58,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
+      format.html { redirect_to articles_path, notice: 'Article was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
